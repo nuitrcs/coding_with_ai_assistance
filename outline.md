@@ -36,26 +36,28 @@
 
 ## 3. Lecture: key best practices (45 min)
 
-Focus on the key best practices; more best practices get introduced during the exercise and added to the bingo card. Organized around the four main messages:
+Focus on the key best practices; more best practices (see `best_practices.md`) get introduced during the exercise and added to the bingo card. Organized around the four main messages:
 
 **A. Ask for code, not conclusions / analysis**
 - Have the AI write code you run yourself — don't ask it to analyze your data or hand you conclusions directly
 - The code an AI writes tends to be verbose and trained more for software engineering than data science/research workflows — use it with that in mind
 
 **B. Break it down yourself**
-- Decompose into small chunks (function/script-sized), not "build my whole pipeline"
-- Ask the AI to propose a plan or pseudocode and check in before it generates code
+- Break the problem into small chunks before you prompt
+- Ask the AI to write a plan (and/or pseudocode) and check in with you before it generates code
+- Ask it to state its assumptions or ask clarifying questions first — don't let it guess
+- Give it good context — a vague prompt gets a vague answer
 
 **C. Human in the loop — you drive**
-- Understand and review every piece of code before you run or trust it
+- Review and understand the code before you run or trust it
 - Cross-check unfamiliar library usage against the documentation
-- Iterate — one prompt rarely gets it right; use follow-ups or different conversations
+- Iterate — one prompt rarely gets it right; use follow-ups or a fresh conversation
 
 **D. Research and data practices still apply**
-- Reproducibility and documentation (comments, docstrings, README)
 - Know your data before and while you clean/analyze it
-- Test on small examples / toy data; think about edge cases
-- Keep code complexity matched to the project's actual scale and goals
+- Ask the AI to help think through edge cases and failure modes, then verify them yourself
+- Keep code complexity matched to the project's scale and goals
+- Document your work and give credit — comments/docstrings/README, which AI tool you used
 
 ## Exercise kickoff (15 min)
 
