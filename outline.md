@@ -17,13 +17,15 @@
 | 1:40–2:10 | 30 min | 4c. Exercise — Work with existing code |
 | 2:10–2:20 | 10 min | Break |
 | 2:20–3:00 | 40 min | 4d. Exercise — Analyze & visualize |
-| 3:00–3:15 | 15 min | 4e. Group readouts |
+| 3:00–3:15 | 25 min | 4e. Group readouts |
 | 3:15–3:25 | 10 min | Break |
-| 3:25–4:00 | 35 min | 5. Final debrief, bingo, takeaways |
+| 3:25–4:00 | 25 min | 5. Final debrief, bingo, takeaways |
 
 ---
 
 ## 1. Welcome & introductions (15 min)
+
+(Slides.)
 
 - Who we are and what RCDS does
 - What this workshop is / isn't (tool-agnostic, human-in-the-loop coding assistance — not agents, etc.)
@@ -31,16 +33,22 @@
 
 ## 2. Context: what we're seeing (25 min)
 
+(Slides and group discussion.)
+
 - Real-world stories from consults — issues we see researchers run into with AI-assisted coding
 - Brief, informal show-of-hands / quick share: "What are you already using AI for in your coding?" 
 
 ## 3. Lecture: key best practices (45 min)
 
+(Slides.)
+
 Focus on the key best practices; more best practices (see `best_practices.md`) get introduced during the exercise and added to the bingo card. Organized around the four main messages:
 
 **A. Ask for code, not conclusions / analysis**
 - Have the AI write code you run yourself — don't ask it to analyze your data or hand you conclusions directly
-- The code an AI writes tends to be verbose and trained more for software engineering than data science/research workflows — use it with that in mind
+- The code an AI writes is trained for SWE rather than research data
+    - Tends to be verbose and overly complicated
+    - Structured differently
 
 **B. Break it down yourself**
 - Break the problem into small chunks before you prompt
@@ -61,13 +69,17 @@ Focus on the key best practices; more best practices (see `best_practices.md`) g
 
 ## Exercise kickoff (15 min)
 
+(Have on GitHub.)
+
 - Split into groups of 3–4
-- Each group gets assigned one of the 3 research-question/dataset tracks (social science, bio, engineering)
+- Each group gets assigned one of the 3 research-question/dataset tracks (social science, bio, engineering). Make sure to have cleaned datasets too so that they can use for analysis if they cannot finish the cleaning step 
 - Hand out: the project summary for their track, a project-folder starter template, and the best-practices bingo card
 - Explain the deliverable: by 3:00pm, each group gives a ~3-min readout of their approach and findings
 - We'll be circulating throughout to help and to call out best practices as they happen (tie-in to bingo)
 
 ### Best-practices bingo
+
+(Have on GitHub and bring printed.)
 
 - A grid mixing (a) the practices just covered in the lecture and (b) additional ones seeded during the exercise — e.g. "asked two different chatbots the same question and compared," "caught the AI making something up," "rewrote a vague prompt after a bad first answer," "asked the AI to explain unfamiliar code before using it"
 - Groups (or individuals) mark a square when they catch themselves — or a teammate — doing it; we also point out squares as we walk around
@@ -76,13 +88,15 @@ Focus on the key best practices; more best practices (see `best_practices.md`) g
 
 ## 4. Exercise: one project, start to finish (~3 hrs total)
 
-Each group works one continuous project simulation on their assigned dataset/research question, moving through the real research pipeline. Checkpoints between phases are short group debriefs (facilitator-led, whole room or per-table) tying what just happened back to the best practices. We circulate around.
+Each group works one continuous project simulation on their assigned dataset/research question, moving through the real research pipeline. The day of the workshop we can assess how it's going and, at the beginning of each step, share some new best practices, etc. We ask people to compare their prompts, tools, outputs, etc. between them. Checkpoints between phases are short group debriefs (facilitator-led, whole room or per-table) tying what just happened back to the best practices. We circulate around.
 
 (Datasets/research questions aren't chosen yet. Everything below is written to be dataset-agnostic so it drops in once we have them.)
 
 ### 4a. Plan the project (40 min, pre-lunch)
 
 **Goal:** translate the research question into a computational task and set project up before touching data.
+
+Note: preface this step of the exercises by pointing out the difference between opening up a notebook and going vs having different scripts, etc.
 
 - Prompt the AI to help translate the research question into a concrete computational task
 - Break the project into smaller steps/milestones
@@ -118,13 +132,15 @@ Each group works one continuous project simulation on their assigned dataset/res
 - Sanity-check outputs against what the group expects from the domain/data
 - Draft a 2–3 sentence summary of findings for the readout
 
-### 4e. Group readouts (15 min)
+### 4e. Group readouts (25 min)
 
 - Each group gives a ~3-min informal readout: research question, approach, one finding, one best-practice moment (tie-in to bingo)
 
 ---
 
-## 5. Final debrief & takeaways (35 min)
+## 5. Final debrief & takeaways (25 min)
+
+(Slides and group discussion.)
 
 - Bingo review: which squares did people fill? Any best practices that came up that weren't on the card?
 - Reflection question: what are three things from today people will try in their own work this week?
