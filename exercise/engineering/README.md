@@ -27,34 +27,42 @@ For this workshop, focus on behavioral performance rather than the raw eye-track
 
 ### Raw data
 
-`raw_data/program_comprehension_raw.csv` contains 240 observations (plus a header): 20 participants completing 12 tasks. It combines the study's original per-participant result files. One row records one participant's answer to one presented code snippet.
+`raw_data/` contains 20 semicolon-delimited files named `Results_<participant-id>.csv`, one for each participant, plus `solutions.csv`. Each result file records one participant's answers in the order they completed the tasks. Across the 20 files, there are 260 response rows: 20 `WarmUp` rows and 240 study-task rows. One study-task row records one participant's answer to one presented code snippet.
 
 | Column | Description |
 | --- | --- |
-| `Task` | Snippet identifier, such as `Task1CP` or `Task1CM`. |
 | `Number` | Order in which that participant completed the task. |
+| `Task` | Snippet identifier, such as `Task1CP` or `Task1CM`; `WarmUp` is not part of the analysis. |
 | `Answer_Out` | The participant's submitted answer. Answers can be numbers, Boolean values, or lists. |
 | `Time` | Response time in milliseconds. |
 | `TimeOut` | Whether the task reached the study's time limit. |
 | `SubjectID` | An anonymized participant identifier. |
 
-The raw file does not itself identify the correct answer. Determining whether an answer is correct requires matching `Task` to the answer key supplied with the original replication package. Before analysis, inspect how `Task` encodes both the task number and the condition, convert response time to seconds, and decide how you will handle timeouts.
+`solutions.csv` is also semicolon-delimited. It has `Task` and `Solution` columns and gives the correct answer for the warm-up and for both versions of each of the 12 tasks.
+
+To produce an analysis dataset, read and combine the 20 result files, remove the `WarmUp` rows, join the answer key by `Task`, derive correctness, extract the task number and condition from `Task`, and convert response time to seconds. Inspect the data as you work: the source files use both uppercase and title-case forms of Boolean values (for example, `FALSE` and `False`). Decide how you will handle timeouts.
 
 ### Clean data
 
-`clean_data/program_comprehension_clean.csv` contains the same 240 participant-task observations in analysis-ready form. It retains the original response information and adds derived variables needed for the exercise.
+`clean_data/program_comprehension_clean.csv` contains the 240 study-task observations in analysis-ready form. It is the original replication package's combined performance-results output, renamed for this exercise.
 
 | Column | Description |
 | --- | --- |
-| `participant_id` | Anonymized participant identifier. |
-| `task` | Underlying task number, from 1 to 12. |
-| `condition` | `CP` for comments present or `CM` for comments missing. |
-| `answer` | The participant's submitted answer. |
-| `correct_answer` | The answer specified in the study's task key. |
-| `correct` | Whether `answer` matches `correct_answer`. |
-| `response_time_seconds` | Response time in seconds. |
-| `timed_out` | Whether the task reached the time limit. |
-| `presentation_order` | Order in which the participant completed the task. |
+| `Task` | Snippet identifier, such as `Task1CP` or `Task1CM`. |
+| `Task_Number` | Underlying task number, from 1 to 12. |
+| `Task_Type` | `CP` for comments present or `CM` for comments missing. |
+| `Answer_Out` | The participant's submitted answer. |
+| `Solution` | The answer specified in the task key. |
+| `Correct` | Whether `Answer_Out` matches `Solution`. |
+| `Time` | Response time in seconds. |
+| `TimeOut` | Whether the task reached the time limit. |
+| `Correct_Only_Time` | Response time for a correct answer, otherwise 0. |
+| `SubjectID` | Anonymized participant identifier. |
+| `TaskBase` | Task identifier without the condition, such as `Task1`. |
+| `min`, `max` | Minimum and maximum response time for that task across both conditions. |
+| `Normalized_Time`, `Time_Score` | Time transformations from the original analysis pipeline, used to construct its performance score. |
+
+For the core exercise, `Task_Number`, `Task_Type`, `Correct`, `Time`, `TimeOut`, and `SubjectID` are the most useful columns. You may ignore the score-related columns unless you choose to explore the original authors' scoring approach.
 
 ## Source
 
