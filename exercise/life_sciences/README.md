@@ -24,7 +24,7 @@ The researchers reared first-instar *An. stephensi* larvae in trays containing 1
 
 The tray is the experimental unit. Individual larvae within a tray shared the same environment, so do not treat them as fully independent experimental replicates.
 
-For this exercise, filter to `Evaporation == "C"`. The evaporation-allowed condition is included in the supplied data because it is part of the original experiment, but it is outside the core analysis question. You may examine it as an optional extension.
+For this exercise, filter to the controlled-water condition: `Evaporation == "C"` in the raw data and `evap == "C"` in the clean data. The evaporation-allowed condition is included in the supplied data because it is part of the original experiment, but it is outside the core analysis question. You may examine it as an optional extension.
 
 ## Data files
 
