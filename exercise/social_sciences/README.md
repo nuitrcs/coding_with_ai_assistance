@@ -63,6 +63,8 @@ Use the raw data to inspect variables, dates, missing values, and coding. The or
 | `DEF_wl` | Corresponding coded defendant outcome. |
 | `STATE_TERR` | State or territory associated with the court district. |
 | `REGION` | Broad US region assigned in the original workflow. |
+| `OBJECTID` | Row identifier from the court-district crosswalk table used in the original replication workflow. Not analytically meaningful on its own. |
+| `Judicial_2` | Sub-district name (e.g., "Eastern District") from the same crosswalk; combine with `STATE_TERR` for the full district name. |
 
 For `PLT_wl`, the original authors treated judgments for the plaintiff or both parties, and settlements, as wins. Judgments for the defendant and most non-settlement dismissals were treated as losses. The `n` category is retained because not every qualifying resolution fits those definitions.
 
