@@ -31,7 +31,7 @@ Use code to load and inspect the raw data.
 
 - Identify the observations, variables, file format, missing values, and any data-quality issues that matter for your question.
 - Ask for code in small pieces: for example, code to inspect column names, summarize missingness, or check a suspected issue.
-- Write and run cleaning code. Save the resulting dataset in only when you can explain what changed and why.
+- Write and run cleaning code. Save the resulting dataset only when you can explain what changed and why.
 - Verify the cleaning worked by checking row counts, values, summaries, or other relevant outputs.
 
 If you do not finish this stage, you may use the provided clean data to continue.
