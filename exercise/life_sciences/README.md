@@ -17,7 +17,7 @@ Use the data to describe patterns, not to make causal claims beyond this control
 
 The researchers reared first-instar *An. stephensi* larvae in trays containing 100 larvae each. They recorded pupation, adult emergence, deaths, and water additions daily. The experiment included:
 
-- temperatures from 16 to 40 degrees C in the student-facing analysis data;
+- temperatures from 16 to 41 degrees C in the raw daily data; the provided clean analysis files use treatments from 16 to 40 degrees C;
 - relative humidity (RH) levels of 30%, 45%, 60%, 75%, and 90%;
 - two water-management conditions: `C` (water volume controlled) and `E` (evaporation allowed); and
 - replicate trays across experimental blocks.
