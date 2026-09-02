@@ -47,10 +47,12 @@ Important columns include:
 | `JURIS` | Basis for federal jurisdiction, recoded into readable labels. |
 | `NOS` / `NOS_t` | FJC nature-of-suit code and its label. All cases in this exercise have `NOS == 893`, environmental matters. |
 | `DISP` / `DISP_t` | FJC disposition code and a descriptive label. |
-| `JUDGMENT` | FJC judgment code. |
+| `JUDGMENT` | For cases resolved by a final judgment: `1` = plaintiff, `2` = defendant, `3` = both, `4` = unknown; `0` and `-8` = missing. |
 | `DISTRICT` | FJC code for the federal court district. |
 
 Use the raw data to inspect variables, dates, missing values, and coding. The original FJC codes and party classifications are complex; do not assume that every numeric field is self-explanatory.
+
+To recreate the plaintiff-outcome code used in the clean data, treat settlements as plaintiff wins and non-settlement dismissals as plaintiff losses. More precisely, the replication workflow codes `PLT_wl` as `w` when `JUDGMENT` is `1` or `3`, or when `DISP` is `13`; it codes `PLT_wl` as `l` when `JUDGMENT` is `2`, or when `DISP` is `2`, `3`, `12`, or `14`. All other combinations are coded `n` (neither/uncoded).
 
 ### Clean data
 
@@ -70,6 +72,6 @@ For `PLT_wl`, the original authors treated judgments for the plaintiff or both p
 
 ## Source
 
-The source records are from the [Federal Judicial Center Integrated Database](https://www.fjc.gov/research/idb). The exercise data are adapted from Rea, C., Merten, A., and Rife, A. (2024), “[Outcomes and policy focus of environmental litigation in the United States](https://doi.org/10.1038/s41893-024-01456-x),” *Nature Sustainability* 7, 1469–1480. The authors’ [replication repository](https://github.com/guscrea/Nature_Sustainability_2024) contains the original processing and analysis code.
+The source records are from the [Federal Judicial Center Integrated Database](https://www.fjc.gov/research/idb). The `JUDGMENT` definitions above come from the FJC Civil Codebook (1988 forward), `JUDGMENT` field. The exercise data are adapted from Rea, C., Merten, A., and Rife, A. (2024), “[Outcomes and policy focus of environmental litigation in the United States](https://doi.org/10.1038/s41893-024-01456-x),” *Nature Sustainability* 7, 1469–1480. The authors’ [replication repository](https://github.com/guscrea/Nature_Sustainability_2024) contains the original processing and analysis code.
 
 This exercise simplifies the original workflow. It does not ask you to reproduce the authors’ full-scale data processing, manual party coding, regression models, or geographic analysis.
