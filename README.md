@@ -8,7 +8,7 @@ Please follow these [instructions to download the materials for this workshop](h
 
 ## Exercise
 
-The instructions and materials for the exercise are in the [exercise](exercise/) folder. Start with the [exercise instructions](exercise/README.md).
+The instructions and materials for the exercise are in the [exercise](exercise/) folder.
 
 ## AI at Northwestern
 
@@ -18,4 +18,4 @@ Make sure to review [Northwestern's guidelines on the use of generative AI](http
 
 ## Note on AI usage
 
-We used Codex and Claude to help us create the materials for this workshop.
+We used Codex and Claude to help us create the materials for this workshop -- including brainstorming, drafting or re-writing content, finding datasets, and generating code.

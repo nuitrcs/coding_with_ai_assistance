@@ -28,11 +28,10 @@
 
 ## Before you trust the output
 
-- Review the code
-- Understand the code before you use it
+- Review and understand the code before you use it
 - Test the code as relevant
 - Validate outputs against known-correct results whenever you have something to check against
-- Be skeptical when the AI says something works or is correct — including its own self-assessments of its code. Verify independently through documentation, testing, or a colleague
+- Be skeptical when the AI says something works or is correct — verify independently through documentation, testing, or a colleague
 - Ask the tool to explain code you don't fully understand
 - Cross-check unfamiliar library usage against the documentation or other reliable sources — you can ask the chatbot for URLs
 - Use a second AI tool for a second opinion when it matters, or try the same prompt in a fresh conversation — responses vary across tools and even across conversations with the same tool
