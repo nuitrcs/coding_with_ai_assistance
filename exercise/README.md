@@ -6,18 +6,20 @@ Do not to let the chatbot do the research for you. Decide what to ask, write or 
 
 ## Before you begin
 
-1. Form a group of 3-4 people and choose a track:
+1. Choose a track you want to work on
    - `social_sciences`
    - `life_sciences`
    - `engineering`
-2. Open the `README.md` in your track folder. It describes the research question, the data, and its source.
-3. We encourage each person in the group to use a different chatbot and prompting strategies so that you can compare what each of you gets.
+2. Form a group of 3-4 people to work on that track
+3. Open the `README.md` in your track folder. It describes the research question, the data, and its source.
+
+We encourage each person in the group to use a different chatbot and prompting strategies so that you can compare what each of you gets.
 
 ## Instructions
 
 Work through the following stages with your group. 
 
-The goal today is for you to experiment coding with AI assistance and learn some best practices. Focus on experimenting with prompts, tools, etc. and discuss this with your group. You do not need a perfect or complete analysis. 
+**The goal today is for you to experiment coding with AI assistance and learn some best practices. Focus on experimenting with prompts, tools, etc. and discuss this with your group. You do not need a perfect or complete analysis.**
 
 The exercise has five parts:
 
@@ -37,6 +39,7 @@ Use code to load and inspect the raw data.
 - Ask for code in small pieces: for example, code to inspect column names, summarize missingness, or check a suspected issue.
 - Write and run cleaning code -- make sure you can explain what changed and why.
 - Verify the cleaning worked by checking row counts, values, summaries, or other relevant outputs.
+- Make sure to document the decisions that you made while cleaning the data -- both in the code and a small report that you can later use for your methods section.
 
 *No worries if you do not finish this stage. You can use the provided clean data for the rest of the exercise.*
 
@@ -48,6 +51,7 @@ Each track includes a `post_doc_code` file: code left by a fictional postdoc fro
 - Use the chatbot to explain unfamiliar sections, identify assumptions about the data, and suggest focused changes.
 - Decide whether the code is appropriate for your data and research question.
 - Adapt, replace, or set aside code as needed.
+- Make sure to document what you used from the postdoc's code, what you adapted, and why.
 
 ### 4. Analyze and visualize
 
@@ -56,9 +60,10 @@ Use the clean data to answer the research question.
 - Ask for code to carry out one manageable analysis and create one useful visualization.
 - Review and run the code yourself.
 - Check whether the result is plausible given the data and the research context.
-- Draft a 2-3 sentence description of what you found, including appropriate uncertainty or limitations.
+- Draft a 2-3 sentence description of how you used AI and what you found. Anything that surprised you?
+- Make sure to document the decisions that you made while analyzing and visualizing the data -- both in the code and a small report that you can later use for your methods section.
 
-Note: The datasets for the exercise come from the replication packages of three recently published articles. The research questions that we are providing for you today are not the full questions answered in the articles. We are also not asking you to work with the full data for the articles. *If you finish early, though, feel free to go to the full replication package, use AI to understand it, and extend your work.*
+Note: The datasets for the exercise come from the replication packages of three recently published articles. The research questions that we are providing for you today are not the full questions answered in the articles. We are also not asking you to work with the full data used in the articles. *If you finish early, though, feel free to go to the full replication package, use AI to understand it, and extend your work.*
 
 ### 5. Prepare a brief readout
 
