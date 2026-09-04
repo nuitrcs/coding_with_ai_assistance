@@ -1,14 +1,14 @@
-# Engineering: Do code comments help people understand programs?
+# Engineering: Do code comments help people understand software programs?
 
 ## Project background
 
-Comments can explain a program's purpose or draw attention to a tricky step, but they can also be redundant or distracting. In this study, computer-science students completed short Java program-comprehension tasks while seeing code snippets either with inline comments or without them. The researchers recorded whether each answer was correct and how long the participant took to respond.
+Comments can explain a software program's purpose or draw attention to a tricky step, but they can also be redundant or distracting. In this study, computer-science students completed short Java program-comprehension tasks while seeing code snippets either with inline comments or without them. The researchers recorded whether each answer was correct and how long the participant took to respond.
 
 ## Research question
 
 For these Java program-comprehension tasks, how do accuracy and response time differ between the **comments-present** and **comments-missing** conditions? Does the apparent pattern differ across code snippets?
 
-Use the data to describe the experimental results. A useful analysis might compare the percentage of correct answers and a typical response time for each condition, then visualize those comparisons by task.
+A useful analysis might compare the percentage of correct answers and a typical response time for each condition, then visualize those comparisons by task.
 
 ## Study design
 
@@ -17,17 +17,19 @@ Twenty computer-science students completed comprehension questions about 12 shor
 - `CP` (comments present): the code included inline comments.
 - `CM` (comments missing): the same code did not include those comments.
 
-This was a partially crossover, within-subjects design. Each participant completed every underlying task, but saw a given task in only one condition. For example, a participant who saw Task 1 with comments did not also see Task 1 without comments. Assignment and task order were balanced across the study.
+This was a within-subjects study: every participant completed all 12 underlying tasks. However, each person saw each task only once—either with comments or without comments. For example, if a participant saw Task 1 with comments, they did not see the uncommented version of Task 1. Instead, they saw uncommented versions of some of the other tasks.
 
-The experimental observation is one participant's response to one code snippet. The 12 snippets differ in topic and difficulty, so do not treat all task rows as interchangeable. When pooling across tasks, account for task in your summaries or visualization; examining each task separately is a useful way to see whether the pattern is consistent.
+The researchers balanced which version of each task participants received and the order in which tasks appeared, so that neither condition nor task order had an unfair advantage.
 
-For this workshop, focus on behavioral performance rather than the raw eye-tracking data. Eye-tracking measures require specialized preprocessing and are outside the scope of the exercise.
+The experimental observation is one participant's response to one code snippet. The 12 snippets differ in topic and difficulty, so do not treat all task rows as interchangeable. When pooling across tasks, account for task in your summaries or visualization. Examining each task separately is a useful way to see whether the pattern is consistent.
+
+For this workshop, focus on behavioral performance rather than the raw eye-tracking data.
 
 ## Data files
 
 ### Raw data
 
-`raw_data/` contains 20 semicolon-delimited files named `Results_<participant-id>.csv`, one for each participant, plus `solutions.csv`. Each result file records one participant's answers in the order they completed the tasks. Across the 20 files, there are 260 response rows: 20 `WarmUp` rows and 240 study-task rows. One study-task row records one participant's answer to one presented code snippet.
+`raw_data/` contains 20 semicolon-delimited files named `Results_<participant-id>.csv`, one for each participant, plus `solutions.csv`. Each result file records one participant's answers in the order they completed the tasks. Across the 20 files, there are 260 response rows: 20 `WarmUp` rows and 240 study-task rows. One study-task row records one participant's answer to one presented code snippet. You need to combine the 20 result files.
 
 | Column | Description |
 | --- | --- |
@@ -38,9 +40,13 @@ For this workshop, focus on behavioral performance rather than the raw eye-track
 | `TimeOut` | Whether the task reached the study's time limit. |
 | `SubjectID` | An anonymized participant identifier. |
 
-`solutions.csv` is also semicolon-delimited. It has `Task` and `Solution` columns and gives the correct answer for the warm-up and for both versions of each of the 12 tasks.
+`solutions.csv` is also semicolon-delimited. It has `Task` and `Solution` columns and gives the correct answer for the warm-up and for both versions of each of the 12 tasks. You need to match each response to its correct answer in `solutions.csv` using the `Task` column.
 
-To produce an analysis dataset, read and combine the 20 result files, remove the `WarmUp` rows, join the answer key by `Task`, derive correctness, extract the task number and condition from `Task`, and convert response time to seconds. Inspect the data as you work: the source files use both uppercase and title-case forms of Boolean values (for example, `FALSE` and `False`). Decide how you will handle timeouts.
+You need to add a `Correct` column that is `True` when the participant's answer matches the solution and `False` otherwise.
+
+You also need to create two new columns from `Task`: one for the code snippet number and one for the comment condition. For example, a row labeled `Task1CP` is about code snippet 1 and has comments (`CP`); a row labeled `Task1CM` is also about code snippet 1 but has no comments (`CM`).
+
+You'll need to decide how to handle timeouts.
 
 ### Clean data
 
