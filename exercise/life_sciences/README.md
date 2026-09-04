@@ -6,25 +6,26 @@
 
 ## Research question
 
-Under the **water-volume-maintained** condition, how are temperature and relative humidity associated with:
+Under the water-volume-maintained condition, how are temperature and relative humidity associated with the proportion of mosquito larvae that survive to adult emergence and the time required for surviving mosquitoes to develop?
 
-1. the proportion of mosquito larvae that survive to adult emergence; and
-2. the time required for surviving mosquitoes to develop?
-
-Use the data to describe patterns, not to make causal claims beyond this controlled experiment. Consider whether the relationship between temperature and each outcome appears to differ across relative-humidity levels.
+Consider whether the relationship between temperature and each outcome appears to differ across relative-humidity levels.
 
 ## Study design
 
-The researchers reared first-instar *An. stephensi* larvae in trays containing 100 larvae each. They recorded pupation, adult emergence, deaths, and water additions daily. The experiment included:
+The researchers raised (reared) newly hatched *An. stephensi* larvae in trays containing 100 larvae each. These mosquitoes entered the experiment before sheding their first outer covering (exoskeleton). They recorded pupation (the transition from larva to pupa, the non-feeding developmental stage before the adult mosquito emerges), adult emergence, deaths, and water additions daily. The experiment included:
 
-- temperatures from 16 to 41 degrees C in the raw daily data; the provided clean analysis files use treatments from 16 to 40 degrees C;
+- temperatures from 16 to 41 degrees Celsius in the raw daily data (the provided clean analysis files use treatments from 16 to 40 degrees);
 - relative humidity (RH) levels of 30%, 45%, 60%, 75%, and 90%;
 - two water-management conditions: `C` (water volume controlled) and `E` (evaporation allowed); and
 - replicate trays across experimental blocks.
 
+An experimental block is a group of trays run together as a separate cohort under similar background conditions. Blocks help account for differences between experimental runs that are unrelated to the temperature and humidity treatments.
+
 The tray is the experimental unit. Individual larvae within a tray shared the same environment, so do not treat them as fully independent experimental replicates.
 
-For this exercise, filter to the controlled-water condition: `Evaporation == "C"` in the raw data and `evap == "C"` in the clean data. The evaporation-allowed condition is included in the supplied data because it is part of the original experiment, but it is outside the core analysis question. You may examine it as an optional extension.
+For this exercise, filter to the controlled-water condition: `Evaporation == "C"` in the raw data (and `evap == "C"` in the clean data).
+
+The evaporation-allowed condition is included in the supplied data because it is part of the original experiment, but it is outside the exercise. If you finish early, you can work with it too.
 
 ## Data files
 
@@ -34,9 +35,9 @@ For this exercise, filter to the controlled-water condition: `Evaporation == "C"
 
 | Column | Description |
 | --- | --- |
-| `Day` | Day of observation in the source workbook. |
+| `Day` | Day of observation. |
 | `Date` | Calendar date of the observation. |
-| `Temperature` | Temperature treatment, in degrees C. |
+| `Temperature` | Temperature treatment, in degrees Celsius. |
 | `RH` | Relative-humidity treatment, as a percent. |
 | `Evaporation` | Water-management condition: `C` = water volume controlled; `E` = evaporation allowed. |
 | `Block` | Experimental block (a temporally independent cohort). |
@@ -44,7 +45,7 @@ For this exercise, filter to the controlled-water condition: `Evaporation == "C"
 | `Pupae_count` | Number of pupae recorded that day. |
 | `Adult_count` | Number of adults that emerged that day. |
 | `Water_added(ml)` | Water added to the tray that day, in milliliters. |
-| `Dead` | Number of dead mosquitoes recorded that day. Missing values occur in this column. |
+| `Dead` | Number of dead mosquitoes recorded that day. |
 | `Exp.Day` | Experimental-day index. |
 
 Counts in this file are daily counts, not cumulative totals. Before using it for a summary, decide how you will combine repeated daily records for each tray and check that the result is sensible.
@@ -71,9 +72,9 @@ Calculate survival proportion as `n_survivors / 100`.
 | --- | --- |
 | `replicate`, `block`, `temp`, `rh`, `evap`, `tray_no` | Tray and treatment identifiers, defined above. |
 | `development_time` | Day of adult emergence, in days. |
-| `development_rate` | Reciprocal of development time (`1 / development_time`), in days^-1. |
+| `development_rate` | A calculated measure of how quickly a mosquito developed: `1 / development_time`. Its unit, `days^-1`, means “one divided by days” (or “per day”). Larger values mean faster development. For example, a mosquito emerging after 5 days has a development rate of `1 / 5 = 0.2` days^-1. |
 
-Development time is observed only for mosquitoes that survived to adult emergence. Keep that limitation in mind when interpreting it alongside survival.
+Keep in mind that development time is observed only for mosquitoes that survived to adult emergence.
 
 ## Source
 
