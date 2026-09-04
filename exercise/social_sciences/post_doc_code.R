@@ -1,4 +1,4 @@
-# Notes from Maya -- 2024-02-18
+# Notes -- 2024-02-18
 #
 # This is the quick exploratory script I used for the coastal-permitting cases.
 
